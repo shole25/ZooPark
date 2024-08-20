@@ -48,7 +48,7 @@ public abstract class Animal {
     public Integer getHealth() {
         return health;
     }
-
+public boolean aMonthpass(){ return false;}
 
     public abstract void increaseHealth(int health);
 

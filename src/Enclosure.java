@@ -1,6 +1,8 @@
 
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 
 public class Enclosure {
@@ -19,13 +21,20 @@ public class Enclosure {
         return animals;
     }
 
-    public void addAnimal(Animal animal) {
+    public void addAnimal(Animal animal) throws IllegalArgumentException {
         if (animals.size() < 20) {
             animals.add(animal);
             animal.setEnclosure(this);
         } else {
-            System.out.println("Enclosure is full");
-        }
+            throw new IllegalArgumentException("Enclosure full");}
+
+    }
+
+
+    public void aMonthPasses() {
+
+        animals.removeIf(animal -> !animal.aMonthpass());
+
     }
 
     public void removeAnimal(Animal animal) {
@@ -52,4 +61,6 @@ public class Enclosure {
         return animals.size();
     }
 
+    public void setAnimals(List<Animal> healthyAnimals) {
+    }
 }
