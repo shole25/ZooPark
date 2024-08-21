@@ -5,12 +5,12 @@ public class FoodStore {
     private Hashtable<String, Integer> foodStore;
 
 
-    public FoodStore(Hashtable<String, Integer> foodStore) {
-        this.foodStore = foodStore;
-    }
+//    public FoodStore(Hashtable<String, Integer> foodStore) {
+//        this.foodStore = foodStore;
+//    }
 
     public FoodStore() {
-        this.foodStore = foodStore;
+        this.foodStore =  new Hashtable<>();
     }
 
     public void addFood(String foodName, int count) {
@@ -19,10 +19,10 @@ public class FoodStore {
     }
 
     public boolean takeFood(String foodName, int count) {
-        int currentquantity = foodStore.get(foodName);
-        if (currentquantity >= count) {
-            foodStore.put(foodName, currentquantity - count);
-
+        int currentQuantity = foodStore.getOrDefault(foodName, 0);
+        if (currentQuantity >= count) {
+            foodStore.put(foodName, currentQuantity - count);
+            return true;
         }
         return false;
     }

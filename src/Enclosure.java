@@ -1,7 +1,5 @@
-
-
 import java.util.ArrayList;
-import java.util.Iterator;
+
 import java.util.List;
 
 
@@ -16,6 +14,8 @@ public class Enclosure {
         this.food = food;
         this.waste = waste;
     }
+
+
 
     public ArrayList<Animal> getAnimals() {
         return animals;
