@@ -5,9 +5,6 @@ public class FoodStore {
     private Hashtable<String, Integer> foodStore;
 
 
-//    public FoodStore(Hashtable<String, Integer> foodStore) {
-//        this.foodStore = foodStore;
-//    }
 
     public FoodStore() {
         this.foodStore =  new Hashtable<>();
@@ -28,7 +25,8 @@ public class FoodStore {
     }
 
     public boolean hasFood(String foodName){
-        return foodStore.containsKey(foodName);
+
+        return foodStore.contains(foodName);
 
     }
 
